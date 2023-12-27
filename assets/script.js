@@ -16,3 +16,25 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
+
+
+// Declare variables left and right arrow 
+const leftArrow = document.querySelector(".arrow_left");
+const rightArrow = document.querySelector(".arrow_right");
+
+console.log (rightArrow)
+
+// Add event listener on arrow first left, then right
+
+leftArrow.addEventListener("click", function () {
+	console.log("Clic on left arrow");
+  });
+
+rightArrow.addEventListener("click", function () {
+	console.log("Clic on right arrow");
+  });
+
+// Declare variable dot  
+const bannerDot = document.querySelector(".dots");
+
+

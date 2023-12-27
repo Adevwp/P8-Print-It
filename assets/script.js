@@ -47,24 +47,28 @@ for (let i = 0; i < totalSlides; i++) {
 	selectedDot.classList.add('dot_selected');
   }
 
-// Change image, text and dot to infinity !!! HERE !!!
-let currentSlide = 0; // Variable pour suivre l'index de la diapositive actuelle
+// Change image, text and dot to infinity 
+  // add variable to follow the current slide
+let currentSlide = 0; 
 
+  // use event listener on leftarrow to follow click and change image, text and dot
 leftArrow.addEventListener('click', function() {
   console.log("Click on left arrow");
-  currentSlide--;  // Décrémenter l'index de la diapositive actuelle
+  currentSlide--;  
 
-  if (currentSlide < 0) {  // Vérifier si index est inférieur à zéro pour revenir à la dernière diapositive
+  if (currentSlide < 0) {  // If current slide is under 0 go back to last image
     currentSlide = totalSlides - 1;
   }
 
-  const slide = slides[currentSlide];   // Mise à jour image et texte correspondants à la diapo actuelle
+  // update image and tag line
+  const slide = slides[currentSlide];   
   const image = document.querySelector('.banner-img');
   const tagLine = document.querySelector('#banner p');
   image.src = './assets/images/slideshow/' + slide.image;
   tagLine.innerHTML = slide.tagLine;
 
-  const dots = navDots.querySelectorAll('.dot');   // Mise à jour du bullet point actif
+// update dot to the selected
+  const dots = navDots.querySelectorAll('.dot');  
   dots.forEach((dot, index) => {
     dot.classList.remove('dot_selected');
     if (index === currentSlide) {
@@ -73,21 +77,23 @@ leftArrow.addEventListener('click', function() {
   });
 });
 
+
+  // Action for the right arrow, when I click right move to the right
 rightArrow.addEventListener('click', function() {
   console.log("Clic flèche droite");
-  currentSlide++;  // Incrémenter index de la diapo actuelle
+  currentSlide++;  
 
-  if (currentSlide >= totalSlides) { // check si index est sup ou = au nombre de diapos pour revenir à la 1ere diapositive
+  if (currentSlide >= totalSlides) { 
     currentSlide = 0;
   }
 
-  const slide = slides[currentSlide];  // Mise à jour image et  texte correspondants à la diapo en cours
+  const slide = slides[currentSlide];  
   const image = document.querySelector('.banner-img');
   const tagLine = document.querySelector('#banner p');
   image.src = './assets/images/slideshow/' + slide.image;
   tagLine.innerHTML = slide.tagLine;
 
-  const dots = navDots.querySelectorAll('.dot');   // Mise à jour du bullet point actif
+  const dots = navDots.querySelectorAll('.dot');   
   dots.forEach((dot, index) => {
     dot.classList.remove('dot_selected');
     if (index === currentSlide) {

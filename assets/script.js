@@ -73,7 +73,7 @@ leftArrow.addEventListener('click', function() {
 
   // Action for the right arrow, when I click right move to the right
 rightArrow.addEventListener('click', function() {
-	console.log("Clic flèche droite");
+	console.log("Click on right arrow");
 	currentSlide++;  
 
 	if (currentSlide >= totalSlides) { 
